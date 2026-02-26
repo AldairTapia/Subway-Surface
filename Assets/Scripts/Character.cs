@@ -11,7 +11,11 @@ public class Character : MonoBehaviour
    private Animator characterAnimator;
    [SerializeField]
    private float jumpForce = 10f;
-   [SerializeField]
+   public float JumpForce
+    {
+        get {return jumpForce; }
+        set {jumpForce = value; }
+    }
    private float distanceToMove = 2f;
    [SerializeField]
    private float moveDuration = 0.2f;

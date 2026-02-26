@@ -8,6 +8,10 @@ public class PlayerCollide : MonoBehaviour
     [SerializeField]
     private string coinTag = "Coin";
     [SerializeField]
+    private string jumpPowerUpTag = "JumpPowerUp";
+    [SerializeField]
+    private UnityEvent<Transform> onJumpPowerUPCollected;
+    [SerializeField]
     private UnityEvent<Transform> onCoinCollected;
     [SerializeField]
     private UnityEvent <Transform> onObstacleCollision;
@@ -20,6 +24,11 @@ public class PlayerCollide : MonoBehaviour
         else if(other.CompareTag(coinTag))
         {
             onCoinCollected?.Invoke(transform);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag(jumpPowerUpTag))
+        {
+            onJumpPowerUPCollected?.Invoke(transform);
             other.gameObject.SetActive(false);
         }
     }
