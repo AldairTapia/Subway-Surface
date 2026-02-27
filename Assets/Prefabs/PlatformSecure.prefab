@@ -123,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105172878215106978}
   - component: {fileID: 2583132339707897905}
+  - component: {fileID: -8215021177595442784}
   m_Layer: 0
   m_Name: PlatformSecure
   m_TagString: Ground
@@ -155,7 +156,6 @@ Transform:
   - {fileID: 4941861569647653274}
   - {fileID: 5442302134709808321}
   - {fileID: 5944525922944475262}
-  - {fileID: 6310455914331037752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2583132339707897905
@@ -179,6 +179,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.829996, y: 0.7142857, z: 22.263191}
   m_Center: {x: 2.9999995, y: 0, z: 8.56785}
+--- !u!114 &-8215021177595442784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809522355374028688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669f15ba9a33a294d8590177a69a6831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Platform
+  coins: []
 --- !u!1 &3207150991653900235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,77 +1300,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8736030859298044931, guid: 3479f8917e259524bb2aa2f5f9a9e1b5, type: 3}
---- !u!1001 &6006287380889242134
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 105172878215106978}
-    m_Modifications:
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.650182
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.8106403
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.8106403
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.17237
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 15.405
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579678432315044020, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-      propertyPath: m_Name
-      value: BootPowerUp (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
---- !u!4 &6310455914331037752 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 344983543919045166, guid: ab5f5039e2dfaa84c819b55ac53ff065, type: 3}
-  m_PrefabInstance: {fileID: 6006287380889242134}
-  m_PrefabAsset: {fileID: 0}

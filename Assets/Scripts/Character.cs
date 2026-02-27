@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
         get {return jumpForce; }
         set {jumpForce = value; }
     }
+   [SerializeField]
    private float distanceToMove = 2f;
    [SerializeField]
    private float moveDuration = 0.2f;
