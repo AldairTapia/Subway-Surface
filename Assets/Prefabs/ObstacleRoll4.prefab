@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleRoll4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2fb1da3e13f8e1046848da87a5b4bbd8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -368,8 +372,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5098839, y: 2.7136075, z: 0.50988376}
-  m_Center: {x: -2.6887536e-16, y: -0.48107946, z: 0}
+  m_Size: {x: 0.32408786, y: 2.7136075, z: 0.50988376}
+  m_Center: {x: 0.092898026, y: -0.48107946, z: 0}
 --- !u!4 &7839210781192885436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2fb1da3e13f8e1046848da87a5b4bbd8, type: 3}

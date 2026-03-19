@@ -2173,6 +2173,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CamaraFollow
   target: {fileID: 1675975694}
   smoothSpeed: 0.125
+  minX: 0
+  maxX: 3.5
+  verticalThreshold: 1.5
+  verticalSmoothSpeed: 5
 --- !u!4 &1085842471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c41fee6908e45134cb0b6fd9f314cdd5, type: 3}
@@ -2696,6 +2700,8 @@ MonoBehaviour:
         m_CallState: 2
   normalCollider: {fileID: 1675975697}
   rollcollider: {fileID: 1675975699}
+  RightLimit: 3
+  LeftLimit: -0.4
 --- !u!54 &1675975696
 Rigidbody:
   m_ObjectHideFlags: 0
