@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinFollow
   followSpeed: 5
-  minimumDistance: 0.05
+  minimumDistance: 0.001
 --- !u!1001 &2299178303043856030
 PrefabInstance:
   m_ObjectHideFlags: 0
