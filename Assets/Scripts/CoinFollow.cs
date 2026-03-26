@@ -4,7 +4,7 @@ public class CoinFollow : MonoBehaviour
 {
     private Transform player;
     [SerializeField]
-    private float followSpeed= 5f;
+    private float followSpeed= 10f;
     [SerializeField]
     private float minimumDistance = 0.05f;
     private bool canFollow = true;
@@ -33,6 +33,7 @@ public class CoinFollow : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position,targetPosition,followSpeed * Time.deltaTime);
             if(Vector3.Distance(transform.position,targetPosition) < minimumDistance)
             {
+                player.GetComponent<PlayerCollide>()?.CollectCoin(gameObject);
                 player = null;
             }
         }
