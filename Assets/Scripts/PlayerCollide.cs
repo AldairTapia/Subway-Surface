@@ -17,6 +17,10 @@ public class PlayerCollide : MonoBehaviour
     private UnityEvent<Transform> onCoinCollected;
     [SerializeField]
     private UnityEvent <Transform> onObstacleCollision;
+    [SerializeField]
+    private string JetpackTag = "Jetpack";
+    [SerializeField]
+    private UnityEvent<Transform> onJetpackCollected;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(obstacleTag))
@@ -35,6 +39,11 @@ public class PlayerCollide : MonoBehaviour
         else if (other.CompareTag("Magnet"))
         {
             onMagnetCollected?.Invoke(transform);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag(JetpackTag))
+        {
+            onJetpackCollected?.Invoke(transform);
             other.gameObject.SetActive(false);
         }
     }

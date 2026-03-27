@@ -8,5 +8,5 @@ public class CharacterData : ScriptableObject
    public string rollAnimationName = "Roll";
    public string loseAnimationName = "Lose";
    public string runAnimationName = "Run"; 
-   public string flyAnimationName = "flying";
+   public string flyAnimationName = "flyi";
 }

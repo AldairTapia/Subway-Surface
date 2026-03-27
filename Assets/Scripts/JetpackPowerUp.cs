@@ -2,25 +2,25 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using System.Collections;
-
+ 
 public class JetpackPowerUp : MonoBehaviour
 {
-    [SerializeField]
-    private float flyingHeight = 4.5f;
-    [SerializeField]
-    private Character character;
-    [SerializeField]
-    private GameObject jetPackAsset;
-    [SerializeField]
-    private float flyDuration = 5f;
-    [SerializeField]
-    private UnityEvent onJetpackActivated;
-    private Coroutine flyCoroutine;
-    private void Awake ()
+   [SerializeField]
+   private float flyingHeight = 4.5F;
+   [SerializeField]
+   private Character character;
+   [SerializeField]
+   private GameObject jetPackAsset;
+   [SerializeField]
+   private float flyDuration = 5f;
+   [SerializeField]
+   private UnityEvent onJetpackActivated;
+   private Coroutine flyCoroutine;
+   private void Awake()
     {
         jetPackAsset.SetActive(false);
     }
-    public void Activate()
+   public void Activate()
     {
         if (!character.IsActive || character.IsFlying) return;
         character.IsFlying = true;
@@ -28,12 +28,12 @@ public class JetpackPowerUp : MonoBehaviour
         onJetpackActivated?.Invoke();
         character.CharacterRigidbody.isKinematic = true;
         character.transform.DOMoveY(flyingHeight, 1f).SetEase(Ease.OutQuad);
-        character.CharacterAnimator.Play(character.CharacterData.flyAnimationName);
+        character.CharacterAnimator.Play (character.CharacterData.flyAnimationName);
         flyCoroutine = StartCoroutine (DeactivateJetPack());
     }
-    public IEnumerator DeactivateJetPack()
+    private IEnumerator DeactivateJetPack()
     {
-        yield return new WaitForSeconds (flyDuration);
+        yield return new WaitForSeconds(flyDuration);
         Deactivate();
     }
     public void Deactivate()
@@ -43,9 +43,10 @@ public class JetpackPowerUp : MonoBehaviour
             StopCoroutine(flyCoroutine);
             flyCoroutine = null;
         }
-        character.IsFlying = false;
+        character.IsFlying=false;
         jetPackAsset.SetActive(false);
         character.CharacterRigidbody.isKinematic = false;
         character.CharacterAnimator.Play(character.CharacterData.jumpAnimationName);
     }
 }
+ 

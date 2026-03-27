@@ -324,8 +324,6 @@ MonoBehaviour:
   minPLatformsNumber: 1
   maxPlatformsNUmber: 2
   powerUpPools:
-  - {fileID: 838560427}
-  - {fileID: 1789096439}
   - {fileID: 1093465363}
   powerUpOffset: 1
 --- !u!1 &142591738 stripped
@@ -1129,6 +1127,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1435071383}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &604874086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604874087}
+  - component: {fileID: 604874088}
+  m_Layer: 0
+  m_Name: InstantiateFlyingPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &604874087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604874086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.20871997, y: 0, z: 25.15973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435071383}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604874088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604874086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5f192093b9cc94194be5b417ad75eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 4075836970600412356, guid: 4279945fde0d8044f8c4423d35147eea, type: 3}
 --- !u!1 &625569986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,9 +1370,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720356066}
+  - component: {fileID: 720356067}
   m_Layer: 0
   m_Name: JetpackPowerUp
-  m_TagString: Untagged
+  m_TagString: Jetpack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1349,6 +1393,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1589356030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &720356067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720356065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617bfa0c4ced48c48943b142ecedf80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JetpackPowerUp
+  flyingHeight: 5
+  character: {fileID: 1675975695}
+  jetPackAsset: {fileID: 1679090731}
+  flyDuration: 5
+  onJetpackActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858316420}
+        m_TargetAssemblyTypeName: PlatformsManager, Assembly-CSharp
+        m_MethodName: InstantiateFlyingPlatform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1675975694}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &726188406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +2000,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 726188407}
         m_TargetAssemblyTypeName: MagnetPowerUp, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 720356067}
+        m_TargetAssemblyTypeName: JetpackPowerUp, Assembly-CSharp
         m_MethodName: Deactivate
         m_Mode: 1
         m_Arguments:
@@ -2749,6 +2836,7 @@ Transform:
   - {fileID: 1379067607}
   - {fileID: 435947502}
   - {fileID: 1701383050}
+  - {fileID: 604874087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589356029
@@ -3159,6 +3247,22 @@ MonoBehaviour:
           m_StringArgument: Lose
           m_BoolArgument: 0
         m_CallState: 2
+  JetpackTag: Jetpack
+  onJetpackCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 720356067}
+        m_TargetAssemblyTypeName: JetpackPowerUp, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1675975699
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3180,6 +3284,11 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!1 &1679090731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3356512567115265725, guid: c4e43b80d8e59a7419167a12dee6f8eb, type: 3}
+  m_PrefabInstance: {fileID: 245137263467480467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696810892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3883,9 @@ MonoBehaviour:
   securePlatformsPrefabs:
   - {fileID: 535812778}
   - {fileID: 1846612358}
+  flyingPlatformPrefabs:
+  - {fileID: 604874088}
+  flyingPlatformsHeight: 4.5
   initialPlatforms: 5
   minSpeed: 5
   maxSpeed: 15
