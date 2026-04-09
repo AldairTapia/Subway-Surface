@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterData", menuName = "Scriptable Objects/CharacterData")]
+[CreateAssetMenu(fileName="CharacterData",menuName="Scriptable Objects/CharacterData")]
 public class CharacterData : ScriptableObject
 {
    public string jumpAnimationName = "Jump";
@@ -8,5 +8,5 @@ public class CharacterData : ScriptableObject
    public string rollAnimationName = "Roll";
    public string loseAnimationName = "Lose";
    public string runAnimationName = "Run"; 
-   public string flyAnimationName = "flyi";
+   public string flyAnimationName="Fly";
 }
