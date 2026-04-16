@@ -404,6 +404,8 @@ MonoBehaviour:
   maxPlatformsNUmber: 2
   powerUpPools:
   - {fileID: 1093465363}
+  - {fileID: 838560427}
+  - {fileID: 1789096439}
   powerUpOffset: 1
 --- !u!1 &142591738 stripped
 GameObject:
@@ -460,7 +462,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pointsTexts: []
+  pointsTexts:
+  - {fileID: 2008425607}
 --- !u!4 &156771369
 Transform:
   m_ObjectHideFlags: 0
@@ -2422,6 +2425,18 @@ MonoBehaviour:
       - m_Target: {fileID: 156771368}
         m_TargetAssemblyTypeName: Points, Assembly-CSharp
         m_MethodName: StopCounting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 156771368}
+        m_TargetAssemblyTypeName: Points, Assembly-CSharp
+        m_MethodName: CalculateHighScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
